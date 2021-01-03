@@ -17,9 +17,11 @@ Pretty self explanatory. The group ID is, well, the group ID, citizen role is fo
 
 ### IMMIGRATIONRANK
 Well, this is one of the tougher parts. In ROBLOX, ranks have a role ID and a rank ID. This one requires the ROLE ID. To get this, right click your rank as shown and open in a new tab:
+
 ![rightclick](readmeassets/rightclick.png)
 
 You will be then led to a 404 page. Do not fret, as the role ID is right up there for you! It should be the ID with 6-7 digits.
+
 ![roleid](readmeassets/roleid.png)
 
 ### BLACKLISTED
