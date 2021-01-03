@@ -32,5 +32,10 @@ This is a list of blacklisted groups. Seperate the group IDs with commas.
 ### PREFIX
 This may be an immigration bot that should have no commands, but no, it does! This is the prefix of those commands.
 
+## Turning it on
+Make sure that the .env file is how you want it to be. Then you can do the following in the directory:
+  1. `npm i`
+  2. `npm start`
+
 ## Commands
 There is only one command, but it serves a purpose in the bot. `>immigration` serves the purpose of choosing to open or close the border. You can use `>immigration on|true|enable` to open the borders and `>immigration off|false|disable` to close the borders.
