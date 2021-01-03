@@ -4,7 +4,7 @@ require('dotenv').config()
 let enabled = true
 const client = new discord.Client()
 const prefix = process.env.PREFIX
-const blacklisted = process.env.BLACKLISTED
+const blacklisted = process.env.BLACKLISTED.split(",");
 client.login(process.env.TOKEN)
 roblox.setCookie(process.env.COOKIE)
 
@@ -43,6 +43,8 @@ async function first() {
             for (f = 0; f < userGroups.length; f++) {
                 for (l = 0; l < blacklisted.length; l++) {
                     if (blacklisted[l] == userGroups[f].Id) {
+                        console.log(blacklisted[l])
+                        console.log(userGroups[f])
                         failedcheck = true
                         blacklistedgroups += 1
                     }
