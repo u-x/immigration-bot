@@ -1,7 +1,7 @@
 # Immigration Bot
 A simple bot that can be used to automatically rank users in your group upon join.
 
-**THIS DOES REQUIRE NODE.JS! [https://nodejs.org/en/](https://nodejs.org/en/)
+**THIS DOES REQUIRE NODE.JS! [https://nodejs.org/en/](https://nodejs.org/en/)**
 
 ## Setup
 
