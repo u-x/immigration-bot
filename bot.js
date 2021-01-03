@@ -49,20 +49,20 @@ async function first() {
                 }
             }
             if (failedcheck == true) {
-                roblox.setRank(process.env.GROUPID, immigrants[i].userId, process.env.DETAINROLE)
+                roblox.setRank(process.env.GROUPID, immigrants[i].userId, Number(process.env.DETAINROLE))
                 let iEmbed = new discord.MessageEmbed()
                     .setTitle('Fail')
                     .setColor('RED')
                     .setDescription(`${immigrants[i].username} was caught in ${blacklistedgroups} blacklisted groups and successfully detained.`)
-                    .setThumbnail(thumbnail)
+                    .setThumbnail(`https://www.roblox.com/headshot-thumbnail/image?userId=${immigrants[i].userId}&width=420&height=420&format=png`)
                 client.channels.cache.get(process.env.LOGCHANNEL).send(iEmbed)
             } else {
-                roblox.setRank(process.env.GROUPID, immigrants[i].userId, process.env.CITIZENROLE)
+                roblox.setRank(process.env.GROUPID, immigrants[i].userId, Number(process.env.CITIZENROLE))
                 let iEmbed = new discord.MessageEmbed()
                     .setTitle('Success')
                     .setColor('GREEN')
                     .setDescription(`${immigrants[i].username} was found in ${blacklistedgroups} blacklisted groups and successfully immigrated.`)
-                    .setThumbnail(thumbnail)
+                    .setThumbnail(`https://www.roblox.com/headshot-thumbnail/image?userId=${immigrants[i].userId}&width=420&height=420&format=png`)
                 client.channels.cache.get(process.env.LOGCHANNEL).send(iEmbed)
             }
         }
@@ -91,7 +91,7 @@ async function second() {
                 }
             }
             if (failedcheck == true) {
-                roblox.setRank(process.env.GROUPID, immigrants[i].userId, process.env.DETAINROLE)
+                roblox.setRank(process.env.GROUPID, immigrants[i].userId, Number(process.env.DETAINROLE))
                 let iEmbed = new discord.MessageEmbed()
                     .setTitle('Fail')
                     .setColor('RED')
@@ -100,7 +100,7 @@ async function second() {
                     .setThumbnail(`https://www.roblox.com/headshot-thumbnail/image?userId=${immigrants[i].userId}&width=420&height=420&format=png`)
                 client.channels.cache.get(process.env.LOGCHANNEL).send(iEmbed)
             } else {
-                roblox.setRank(process.env.GROUPID, immigrants[i].userId, process.env.CITIZENROLE)
+                roblox.setRank(process.env.GROUPID, immigrants[i].userId, Number(process.env.CITIZENROLE))
                 let iEmbed = new discord.MessageEmbed()
                     .setTitle('Success')
                     .setColor('GREEN')
