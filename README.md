@@ -20,7 +20,7 @@ Well, this is one of the tougher parts. In ROBLOX, ranks have a role ID and a ra
 
 ![rightclick](readmeassets/rightclick.png)
 
-You will be then led to a 404 page. Do not fret, as the role ID is right up there for you! It should be the ID with 6-7 digits.
+You will be then led to a 404 page. Do not fret, as the role ID is right up there for you! It should be the ID with 6-8 digits.
 
 ![roleid](readmeassets/roleid.png)
 
