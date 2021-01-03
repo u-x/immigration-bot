@@ -27,7 +27,9 @@ You will be then led to a 404 page. Do not fret, as the role ID is right up ther
 ![roleid](readmeassets/roleid.png)
 
 ### BLACKLISTED
-This is a list of blacklisted groups. Seperate the group IDs with commas.
+This is a list of blacklisted groups. Seperate the group IDs with commas, like this:
+
+![blacklisted](readmeassets/blacklisted.png)
 
 ### PREFIX
 This may be an immigration bot that should have no commands, but no, it does! This is the prefix of those commands.
