@@ -35,6 +35,8 @@ client.on('message', async message => {
         if (!message.member.hasPermission('ADMINISTRATOR')) return message.reply('you cannot use this command. Please assure you have the `Administrator` permission on one of your roles and try again.')
         let user = args[0]
         let id = await roblox.getIdFromUsername(user)
+        let realname = await roblox.getUsernameFromId(id)
+        let failedcheck = false
         let blacklistedgroups = 0
         const userGroups = await roblox.getGroups(id)
         for (f = 0; f < userGroups.length; f++) {
@@ -50,11 +52,11 @@ client.on('message', async message => {
             let iEmbed = new discord.MessageEmbed()
                 .setTitle('Fail')
                 .setColor('RED')
-                .setDescription(`${user} was caught in ${blacklistedgroups} blacklisted groups and successfully detained.`)
+                .setDescription(`${realname} was caught in ${blacklistedgroups} blacklisted groups and successfully detained.`)
                 .setThumbnail(`https://www.roblox.com/headshot-thumbnail/image?userId=${id}&width=420&height=420&format=png`)
             client.channels.cache.get(process.env.LOGCHANNEL).send(iEmbed)
         } else {
-            message.reply(`${user} has been check and 0 blacklisted groups were found.`)
+            message.reply(`${realname} has been checked and 0 blacklisted groups were found.`)
         }
     }
 })
