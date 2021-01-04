@@ -39,8 +39,6 @@ client.on('message', async message => {
         for (f = 0; f < userGroups.length; f++) {
             for (l = 0; l < blacklisted.length; l++) {
                 if (blacklisted[l] == userGroups[f].Id) {
-                    console.log(blacklisted[l])
-                    console.log(userGroups[f])
                     failedcheck = true
                     blacklistedgroups += 1
                 }
@@ -70,8 +68,6 @@ async function first() {
             for (f = 0; f < userGroups.length; f++) {
                 for (l = 0; l < blacklisted.length; l++) {
                     if (blacklisted[l] == userGroups[f].Id) {
-                        console.log(blacklisted[l])
-                        console.log(userGroups[f])
                         failedcheck = true
                         blacklistedgroups += 1
                     }
