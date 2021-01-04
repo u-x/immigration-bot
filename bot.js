@@ -148,4 +148,6 @@ async function second() {
     }
 }
 
-first()
+setTimeout(() => {
+    first()
+}, 5000);
