@@ -34,6 +34,9 @@ This is a list of blacklisted groups. Seperate the group IDs with commas, like t
 ### PREFIX
 This may be an immigration bot that should have no commands, but no, it does! This is the prefix of those commands.
 
+## LOGCHANNEL
+This is the channel ID of where you would like to log your immigrants.
+
 ## Turning it on
 Make sure that the .env file is how you want it to be. Then you can do the following in the directory:
   1. `npm i`
