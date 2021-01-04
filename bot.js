@@ -13,7 +13,7 @@ client.once('ready', () => {
     client.user.setActivity('over the border', { type: 'WATCHING' })
 })
 
-client.on('message', message => {
+client.on('message', async message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
@@ -32,6 +32,7 @@ client.on('message', message => {
         }
     }
     if (command === 'check') {
+        if (!message.member.hasPermission('ADMINISTRATOR')) return message.reply('you cannot use this command. Please assure you have the `Administrator` permission on one of your roles and try again.')
         let user = args[0]
         let id = roblox.getIdFromUsername(user)
         const userGroups = await roblox.getGroups(id)
