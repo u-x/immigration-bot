@@ -34,7 +34,7 @@ client.on('message', async message => {
     if (command === 'check') {
         if (!message.member.hasPermission('ADMINISTRATOR')) return message.reply('you cannot use this command. Please assure you have the `Administrator` permission on one of your roles and try again.')
         let user = args[0]
-        let id = roblox.getIdFromUsername(user)
+        let id = await roblox.getIdFromUsername(user)
         const userGroups = await roblox.getGroups(id)
         for (f = 0; f < userGroups.length; f++) {
             for (l = 0; l < blacklisted.length; l++) {
