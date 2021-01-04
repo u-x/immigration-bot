@@ -31,6 +31,32 @@ client.on('message', message => {
             message.reply('closed the borders.')
         }
     }
+    if (command === 'check') {
+        let user = args[0]
+        let id = roblox.getIdFromUsername(user)
+        const userGroups = await roblox.getGroups(id)
+        for (f = 0; f < userGroups.length; f++) {
+            for (l = 0; l < blacklisted.length; l++) {
+                if (blacklisted[l] == userGroups[f].Id) {
+                    console.log(blacklisted[l])
+                    console.log(userGroups[f])
+                    failedcheck = true
+                    blacklistedgroups += 1
+                }
+            }
+        }
+        if (failedcheck == true) {
+            roblox.setRank(process.env.GROUPID, id, Number(process.env.DETAINROLE))
+            let iEmbed = new discord.MessageEmbed()
+                .setTitle('Fail')
+                .setColor('RED')
+                .setDescription(`${user} was caught in ${blacklistedgroups} blacklisted groups and successfully detained.`)
+                .setThumbnail(`https://www.roblox.com/headshot-thumbnail/image?userId=${id}&width=420&height=420&format=png`)
+            client.channels.cache.get(process.env.LOGCHANNEL).send(iEmbed)
+        } else {
+            message.reply(`${user} has been check and 0 blacklisted groups were found.`)
+        }
+    }
 })
 
 async function first() {
