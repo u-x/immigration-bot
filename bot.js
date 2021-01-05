@@ -96,11 +96,11 @@ async function first() {
         }
         setTimeout(() => {
             second()
-        }, 5000);
+        }, 10000);
     } else {
         setTimeout(() => {
             second()
-        }, 5000);
+        }, 10000);
     }
 }
 async function second() {
@@ -140,14 +140,14 @@ async function second() {
         }
         setTimeout(() => {
             first()
-        }, 5000);
+        }, 10000);
     } else {
         setTimeout(() => {
             first()
-        }, 5000);
+        }, 10000);
     }
 }
 
 setTimeout(() => {
     first()
-}, 5000);
+}, 10000);
