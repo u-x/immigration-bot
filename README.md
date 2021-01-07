@@ -34,7 +34,7 @@ This is a list of blacklisted groups. Seperate the group IDs with commas, like t
 ### PREFIX
 This may be an immigration bot that should have no commands, but no, it does! This is the prefix of those commands.
 
-## LOGCHANNEL
+### LOGCHANNEL
 This is the channel ID of where you would like to log your immigrants.
 
 ## Turning it on
