@@ -34,11 +34,17 @@ client.on('message', async message => {
     if (command === 'check') {
         if (!message.member.hasPermission('ADMINISTRATOR')) return message.reply('you cannot use this command. Please assure you have the `Administrator` permission on one of your roles and try again.')
         let user = args[0]
-        let id = await roblox.getIdFromUsername(user)
-        let realname = await roblox.getUsernameFromId(id)
+        let id = await roblox.getIdFromUsername(user).catch( (error) => {
+            console.log(error)
+        })
+        let realname = await roblox.getUsernameFromId(id).catch( (error) => {
+            console.log(error)
+        })
         let failedcheck = false
         let blacklistedgroups = 0
-        const userGroups = await roblox.getGroups(id)
+        const userGroups = await roblox.getGroups(id).catch( (error) => {
+            console.log(error)
+        })
         for (f = 0; f < userGroups.length; f++) {
             for (l = 0; l < blacklisted.length; l++) {
                 if (blacklisted[l] == userGroups[f].Id) {
@@ -48,13 +54,17 @@ client.on('message', async message => {
             }
         }
         if (failedcheck == true) {
-            roblox.setRank(process.env.GROUPID, id, Number(process.env.DETAINROLE))
+            await roblox.setRank(process.env.GROUPID, id, Number(process.env.DETAINROLE)).catch( (error) => {
+                console.log(error)
+            })
             let iEmbed = new discord.MessageEmbed()
                 .setTitle('Fail')
                 .setColor('RED')
                 .setDescription(`${realname} was caught in ${blacklistedgroups} blacklisted groups and successfully detained.`)
                 .setThumbnail(`https://www.roblox.com/headshot-thumbnail/image?userId=${id}&width=420&height=420&format=png`)
-            client.channels.cache.get(process.env.LOGCHANNEL).send(iEmbed)
+            client.channels.cache.get(process.env.LOGCHANNEL).send(iEmbed).catch( (error) => {
+                console.log(error)
+            })
         } else {
             message.reply(`${realname} has been checked and 0 blacklisted groups were found.`)
         }
@@ -65,9 +75,13 @@ async function first() {
     if (enabled == true) {
         let failedcheck = false
         let blacklistedgroups = 0
-        const immigrants = await roblox.getPlayers(process.env.GROUPID, process.env.IMMIGRATIONRANK)
+        const immigrants = await roblox.getPlayers(process.env.GROUPID, process.env.IMMIGRATIONRANK).catch( (error) => {
+            console.log(error)
+        })
         for (i = 0; i < immigrants.length; i++) {
-            const userGroups = await roblox.getGroups(immigrants[i].userId)
+            const userGroups = await roblox.getGroups(immigrants[i].userId).catch( (error) => {
+                console.log(error)
+            })
             for (f = 0; f < userGroups.length; f++) {
                 for (l = 0; l < blacklisted.length; l++) {
                     if (blacklisted[l] == userGroups[f].Id) {
@@ -77,7 +91,9 @@ async function first() {
                 }
             }
             if (failedcheck == true) {
-                roblox.setRank(process.env.GROUPID, immigrants[i].userId, Number(process.env.DETAINROLE))
+                await roblox.setRank(process.env.GROUPID, immigrants[i].userId, Number(process.env.DETAINROLE)).catch( (error) => {
+                    console.log(error)
+                })
                 let iEmbed = new discord.MessageEmbed()
                     .setTitle('Fail')
                     .setColor('RED')
@@ -85,7 +101,9 @@ async function first() {
                     .setThumbnail(`https://www.roblox.com/headshot-thumbnail/image?userId=${immigrants[i].userId}&width=420&height=420&format=png`)
                 client.channels.cache.get(process.env.LOGCHANNEL).send(iEmbed)
             } else {
-                roblox.setRank(process.env.GROUPID, immigrants[i].userId, Number(process.env.CITIZENROLE))
+                await roblox.setRank(process.env.GROUPID, immigrants[i].userId, Number(process.env.CITIZENROLE)).catch( (error) => {
+                    console.log(error)
+                })
                 let iEmbed = new discord.MessageEmbed()
                     .setTitle('Success')
                     .setColor('GREEN')
@@ -107,9 +125,13 @@ async function second() {
     if (enabled == true) {
         let failedcheck = false
         let blacklistedgroups = 0
-        const immigrants = await roblox.getPlayers(process.env.GROUPID, process.env.IMMIGRATIONRANK)
+        const immigrants = await roblox.getPlayers(process.env.GROUPID, process.env.IMMIGRATIONRANK).catch( (error) => {
+            console.log(error)
+        })
         for (i = 0; i < immigrants.length; i++) {
-            const userGroups = await roblox.getGroups(immigrants[i].userId)
+            const userGroups = await roblox.getGroups(immigrants[i].userId).catch( (error) => {
+                console.log(error)
+            })
             for (f = 0; f < userGroups.length; f++) {
                 for (l = 0; l < blacklisted.length; l++) {
                     if (blacklisted[l] == userGroups[f].Id) {
@@ -119,31 +141,33 @@ async function second() {
                 }
             }
             if (failedcheck == true) {
-                roblox.setRank(process.env.GROUPID, immigrants[i].userId, Number(process.env.DETAINROLE))
+                await roblox.setRank(process.env.GROUPID, immigrants[i].userId, Number(process.env.DETAINROLE)).catch( (error) => {
+                    console.log(error)
+                })
                 let iEmbed = new discord.MessageEmbed()
                     .setTitle('Fail')
                     .setColor('RED')
-                    //${await roblox.getRole(55578748, 54612554).get('name')}
                     .setDescription(`${immigrants[i].username} was caught in ${blacklistedgroups} blacklisted groups and successfully detained.`)
                     .setThumbnail(`https://www.roblox.com/headshot-thumbnail/image?userId=${immigrants[i].userId}&width=420&height=420&format=png`)
                 client.channels.cache.get(process.env.LOGCHANNEL).send(iEmbed)
             } else {
-                roblox.setRank(process.env.GROUPID, immigrants[i].userId, Number(process.env.CITIZENROLE))
+                await roblox.setRank(process.env.GROUPID, immigrants[i].userId, Number(process.env.CITIZENROLE)).catch( (error) => {
+                    console.log(error)
+                })
                 let iEmbed = new discord.MessageEmbed()
                     .setTitle('Success')
                     .setColor('GREEN')
-                    //${await roblox.getRole(55578748, 36810683).get('name')}
                     .setDescription(`${immigrants[i].username} was found in ${blacklistedgroups} blacklisted groups and successfully immigrated.`)
                     .setThumbnail(`https://www.roblox.com/headshot-thumbnail/image?userId=${immigrants[i].userId}&width=420&height=420&format=png`)
                 client.channels.cache.get(process.env.LOGCHANNEL).send(iEmbed)
             }
         }
         setTimeout(() => {
-            first()
+            second()
         }, 10000);
     } else {
         setTimeout(() => {
-            first()
+            second()
         }, 10000);
     }
 }
