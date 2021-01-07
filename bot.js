@@ -99,7 +99,9 @@ async function first() {
                     .setColor('RED')
                     .setDescription(`${immigrants[i].username} was caught in ${blacklistedgroups} blacklisted groups and successfully detained.`)
                     .setThumbnail(`https://www.roblox.com/headshot-thumbnail/image?userId=${immigrants[i].userId}&width=420&height=420&format=png`)
-                client.channels.cache.get(process.env.LOGCHANNEL).send(iEmbed)
+                client.channels.cache.get(process.env.LOGCHANNEL).send(iEmbed).catch( (error) => {
+                    console.log(error)
+                })
             } else {
                 await roblox.setRank(process.env.GROUPID, immigrants[i].userId, Number(process.env.CITIZENROLE)).catch( (error) => {
                     console.log(error)
@@ -109,7 +111,9 @@ async function first() {
                     .setColor('GREEN')
                     .setDescription(`${immigrants[i].username} was found in ${blacklistedgroups} blacklisted groups and successfully immigrated.`)
                     .setThumbnail(`https://www.roblox.com/headshot-thumbnail/image?userId=${immigrants[i].userId}&width=420&height=420&format=png`)
-                client.channels.cache.get(process.env.LOGCHANNEL).send(iEmbed)
+                client.channels.cache.get(process.env.LOGCHANNEL).send(iEmbed).catch( (error) => {
+                    console.log(error)
+                })
             }
         }
         setTimeout(() => {
@@ -149,7 +153,9 @@ async function second() {
                     .setColor('RED')
                     .setDescription(`${immigrants[i].username} was caught in ${blacklistedgroups} blacklisted groups and successfully detained.`)
                     .setThumbnail(`https://www.roblox.com/headshot-thumbnail/image?userId=${immigrants[i].userId}&width=420&height=420&format=png`)
-                client.channels.cache.get(process.env.LOGCHANNEL).send(iEmbed)
+                client.channels.cache.get(process.env.LOGCHANNEL).send(iEmbed).catch( (error) => {
+                    console.log(error)
+                })
             } else {
                 await roblox.setRank(process.env.GROUPID, immigrants[i].userId, Number(process.env.CITIZENROLE)).catch( (error) => {
                     console.log(error)
@@ -159,15 +165,17 @@ async function second() {
                     .setColor('GREEN')
                     .setDescription(`${immigrants[i].username} was found in ${blacklistedgroups} blacklisted groups and successfully immigrated.`)
                     .setThumbnail(`https://www.roblox.com/headshot-thumbnail/image?userId=${immigrants[i].userId}&width=420&height=420&format=png`)
-                client.channels.cache.get(process.env.LOGCHANNEL).send(iEmbed)
+                client.channels.cache.get(process.env.LOGCHANNEL).send(iEmbed).catch( (error) => {
+                    console.log(error)
+                })
             }
         }
         setTimeout(() => {
-            second()
+            first()
         }, 10000);
     } else {
         setTimeout(() => {
-            second()
+            first()
         }, 10000);
     }
 }
