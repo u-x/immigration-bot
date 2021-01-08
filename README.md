@@ -45,3 +45,13 @@ Make sure that the .env file is how you want it to be. Then you can do the follo
 ## Commands
 There is only two commands, but they serve a purpose in the bot. `(prefix)immigration` serves the purpose of choosing to open or close the border. You can use `(prefix)immigration on|true|enable` to open the borders and `(prefix)immigration off|false|disable` to close the borders.
 The other command is `(prefix)check (username)`. This allows you to send a user back to immigration to ensure that they are not in any blacklisted groups.
+
+## Hosting
+Ah, the topic of hosting. There are many ways to go about this, but I recommend using repl.it. I will teach you how to do this in this section.
+  1. Go to [https://repl.it](https://repl.it).
+  2. Make an account if you don't already have one. Then proceed to making a new repl BUT DO NOT HIT THE CREATE BUTTON.
+  3. Hit the "Import from GitHub" tab and type in `justIeo/immigration-bot`. The repl will be created with the base bot.
+  4. Configure the .env file to your liking.
+  5. Hit the "Run" button and head to [https://uptimerobot.com](https://uptimerobot.com). Make an account or log in if you have one.
+  6. Make a new HTTPS monitor with the URL of `project-name.repl-username.repl.co`.
+  7. It should be up and running and it should go 24/7.
