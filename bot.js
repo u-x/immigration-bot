@@ -1,3 +1,15 @@
+const express = require('express')
+const app = express()
+const port = 8000
+
+app.get('/', (req, res) => {
+  res.send('Bot online. Please leave this tab open or put it into https://uptimerobot.com as an HTTP monitor.')
+})
+
+app.listen(port, () => {
+  console.log(`Listening on https://localhost:${port}.`)
+})
+
 const roblox = require('noblox.js')
 const discord = require('discord.js')
 require('dotenv').config()
