@@ -34,11 +34,11 @@ client.on('message', async message => {
     if (command === 'immigration') {
         if (!message.member.hasPermission('ADMINISTRATOR')) return message.reply('you cannot use this command. Please assure you have the `Administrator` permission on one of your roles and try again.')
         let mode = args[0]
-        if (mode == 'on' || mode == 'true' || mode == 'enable') {
+        if (mode == 'on' || mode == 'true' || mode == 'enable' || mode == 'open') {
             enabled = true
             message.reply('opened the borders.')
         }
-        if (mode == 'off' || mode == 'false' || mode == 'disable') {
+        if (mode == 'off' || mode == 'false' || mode == 'disable' || mode == 'close') {
             enabled = false
             message.reply('closed the borders.')
         }
