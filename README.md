@@ -43,7 +43,7 @@ Make sure that the .env file is how you want it to be. Then you can do the follo
   2. `npm start`
 
 ## Commands
-There is only two commands, but they serve a purpose in the bot. `(prefix)immigration` serves the purpose of choosing to open or close the border. You can use `(prefix)immigration on|true|enable` to open the borders and `(prefix)immigration off|false|disable` to close the borders.
+There is only two commands, but they serve a purpose in the bot. `(prefix)immigration` serves the purpose of choosing to open or close the border. You can use `(prefix)immigration on|true|enable|open` to open the borders and `(prefix)immigration off|false|disable|close` to close the borders.
 The other command is `(prefix)check (username)`. This allows you to send a user back to immigration to ensure that they are not in any blacklisted groups.
 
 ## Hosting
