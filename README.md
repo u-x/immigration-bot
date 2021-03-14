@@ -48,7 +48,7 @@ The other command is `(prefix)check (username)`. This allows you to send a user 
 
 ## Hosting
 Ah, the topic of hosting. There are many ways to go about this, but I recommend using repl.it. I will teach you how to do this in this section.
-  1. Go to [https://repl.it](https://repl.it).
+  1. Go to [https://replit.com](https://replit.com).
   2. Make an account if you don't already have one. Then proceed to making a new repl BUT DO NOT HIT THE CREATE BUTTON.
   3. Hit the "Import from GitHub" tab and type in `justIeo/immigration-bot`. The repl will be created with the base bot.
   4. Configure the .env file to your liking.
