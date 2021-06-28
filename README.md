@@ -1,6 +1,8 @@
 # Immigration Bot
 A simple bot that can be used to automatically rank users in your group upon join.
 
+***A NEW BOT EXISTS NOW, PLEASE REFER [HERE](https://github.com/justIeo/nation-bot) FOR IT***
+
 **THIS DOES REQUIRE NODE.JS! [https://nodejs.org/en/](https://nodejs.org/en/)**
 
 ## Setup
